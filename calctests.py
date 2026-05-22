@@ -1,9 +1,8 @@
 import unittest
+import math
 from calculator import Calculator
 
-
-class TestStringMethods(unittest.TestCase):
-
+class TestCoreFeatures (unittest.TestCase) :
     def test_add(self):
         c = Calculator()
         self.assertEqual(c.add(3, 3), 6)
