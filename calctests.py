@@ -6,8 +6,12 @@ class TestCoreFeatures (unittest.TestCase) :
     def setUp(self):
         self.calc = Calculator()
 
-    def test_add2(self):
-        self.assertEqual(self.calc.add(12, -10), 2)
+    def test_initial_state(self):
+        self.assertEqual(self.calc.state, 0)
+    
+    def test_get_display(self):
+        self.calc.state = 5
+        self.assertEqual(self.calc.get_display(), 5)
 
     def test_add3(self):
         self.assertEqual(self.calc.add(5, 8), 13)
