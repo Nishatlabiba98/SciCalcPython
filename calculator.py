@@ -25,3 +25,29 @@ class calculator
         else:
             self.display = a + b
         return self.display
+    
+    def subtract(self, a, b= None):
+        if self.error:
+            return "Error"
+        if b is None:
+            self.display = self.state -a
+        else:
+            self.display = a - b
+            return self.display
+        
+    def multiply(self, a, b=None):
+        if self.error:
+            self.display = "Error"
+            if b is None:
+                self.display = a * self.state
+            else: self.display = a * b
+            return self.display
+        
+        def divide(self, a, b=None):
+            if self.error:
+                self.display ="Error"
+                if b is None:
+                    self.display = self.state / a
+                else: self.display = a / b
+                return self.display
+           
