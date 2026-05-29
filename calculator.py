@@ -33,11 +33,11 @@ class calculator:
             self.display = self.state -a
         else:
             self.display = a - b
-            return self.display
+        return self.display
         
     def multiply(self, a, b=None):
         if self.error:
-        return "Error"
+            return "Error"
         if b is None:
                 self.display = a * self.state
         else: self.display = a * b
@@ -57,4 +57,20 @@ class calculator:
                         return "Error"
                     self.display = a / b
             return self.display
-           
+    def power(self, a, b= None):
+        if self.error:
+            return "Error"
+        if b is None:
+            self.display = a ** self.state 
+        else:    
+            self.display = a ** b
+            return self.display
+        
+    def sqrt(self, a):
+        if self.error: 
+            return "Error"
+        if a<0:
+            self.error = True
+            return "Error"
+        self.display = math.sqrt(a)
+        return self.display
