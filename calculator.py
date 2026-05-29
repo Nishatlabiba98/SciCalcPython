@@ -1,6 +1,6 @@
-import math // the math module provides access to mathematical functions
+import math # the math module provides access to mathematical functions
 
-class calculator
+class calculator:
     def __init__(self):
         self.state = 0
         self.error = False
@@ -37,17 +37,24 @@ class calculator
         
     def multiply(self, a, b=None):
         if self.error:
-            self.display = "Error"
-            if b is None:
+        return "Error"
+        if b is None:
                 self.display = a * self.state
-            else: self.display = a * b
-            return self.display
+        else: self.display = a * b
+        return self.display
         
-        def divide(self, a, b=None):
+    def divide(self, a, b=None):
             if self.error:
-                self.display ="Error"
+                return"Error"
                 if b is None:
+                    if a == 0:
+                        self.error = True
+                        return "Error"
                     self.display = self.state / a
-                else: self.display = a / b
-                return self.display
+                else:
+                    if b == 0:
+                        self.error = True
+                        return "Error"
+                    self.display = a / b
+            return self.display
            
